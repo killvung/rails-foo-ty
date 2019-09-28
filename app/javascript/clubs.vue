@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <p>{{ message }}</p>
+    <ul id="example-1">
+      <li v-for="{name} in clubs">
+        {{ name }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -10,7 +15,8 @@ export default {
     return {
       message: "Clubs!"
     }
-  }
+  },
+  props: ['clubs']
 }
 </script>
 

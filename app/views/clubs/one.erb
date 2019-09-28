@@ -1,2 +1,9 @@
+<% props = {
+    club: @club
+  }.to_json
+%>
+
+<div id="data" data="<%= props %>"></div>
+
 <%= javascript_pack_tag 'club_vue' %>
 <%= stylesheet_pack_tag 'club_vue' %>

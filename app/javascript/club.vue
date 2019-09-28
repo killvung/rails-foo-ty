@@ -1,16 +1,12 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <p>{{ club.name }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  data: function () {
-    return {
-      message: "Club!"
-    }
-  }
+  props:['club']
 }
 </script>
 
