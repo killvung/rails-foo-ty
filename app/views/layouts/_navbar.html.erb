@@ -1,26 +1,7 @@
-<div class="ui fixed inverted menu">
-    <div class="ui container">
-      <a href="#" class="header item">
-        Foo-ty
-      </a>
-      <a href="#" class="item">Home</a>
-      <div class="ui simple dropdown item">
-        Dropdown <i class="dropdown icon"></i>
-        <div class="menu">
-          <a class="item" href="#">Link Item</a>
-          <a class="item" href="#">Link Item</a>
-          <div class="divider"></div>
-          <div class="header">Header Item</div>
-          <div class="item">
-            <i class="dropdown icon"></i>
-            Sub Menu
-            <div class="menu">
-              <a class="item" href="#">Link Item</a>
-              <a class="item" href="#">Link Item</a>
-            </div>
-          </div>
-          <a class="item" href="#">Link Item</a>
-        </div>
+<div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a href="#" class="header item">Foo-ty</a>
+        <a href="/" class="<%= 'active' if params[:controller] == 'splash' %> item">Home</a>
+        <a href="/clubs" class="<%= 'active' if params[:controller] == 'clubs' %> item">Clubs</a>
       </div>
-    </div>
 </div>
