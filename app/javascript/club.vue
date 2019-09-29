@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  props:['club']
-}
+  props: ["club"]
+};
 </script>
 
 <style scoped>
