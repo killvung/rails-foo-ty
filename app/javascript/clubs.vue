@@ -5,13 +5,13 @@
         <p>{{ message }}</p>
       </h1>
     </div>
-    <div class="ui items" v-for="({name}, index) in clubs" v-bind:key="index">
+    <div class="ui items" v-for="({id, name}, index) in clubs" v-bind:key="index">
       <div class="item">
         <div class="image">
           <img src="../assets/images/default.png" />
         </div>
         <div class="content">
-          <a class="header">{{name}}</a>
+          <a :href="'/'" + id class="header">{{name}}</a>
           <div class="meta">
             <span>Description</span>
           </div>
