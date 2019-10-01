@@ -7,7 +7,7 @@ require 'date'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 club1 = Club.create({name: 'Club 1'})
-club2 = Club.create({name: 'Club 1'})
+club2 = Club.create({name: 'Club 2'})
 Player.create([
     {
         name:'Player 1 from Club 1',
