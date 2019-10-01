@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_09_24_165514) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "clubs", force: :cascade do |t|
     t.string "name"
     t.binary "symbol"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_165514) do
     t.binary "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "club_id"
+    t.bigint "club_id"
     t.index ["club_id"], name: "index_players_on_club_id"
   end
 
