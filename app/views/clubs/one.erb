@@ -1,10 +1,12 @@
-<% props = {
-    club: @club,
-    players: @players
-  }.to_json
-%>
-
-<div id="data" data="<%= props %>"></div>
-
-<%= javascript_pack_tag 'club_vue' %>
-<%= stylesheet_pack_tag 'club_vue' %>
+<div class="ui items stackable cards eight column grid container">
+    	<% @players.each do |player| %>
+    			<div class="ui card">
+		    		<div class="image">
+		          		<%= image_tag("player.png") %>
+		        	</div>		
+		        	<div class="content">
+		        		<a class="header"><%= player.name%></a>
+			        </div>
+		    	</div>
+    	<% end %>
+</div>

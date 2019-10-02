@@ -1,9 +1,15 @@
-<% props = {
-    clubs: @clubs
-  }.to_json
-%>
-
-<div id="data" data="<%= props %>"></div>
-
-<%= javascript_pack_tag 'clubs_vue' %>
-<%= stylesheet_pack_tag 'clubs_vue' %>
+<div class="ui items stackable cards eight column grid container">
+    	<% @clubs.each do |club| %>
+    			<div class="ui card">
+		    		<div class="image">
+		          		<%= image_tag("default.png") %>
+		        	</div>		
+		        	<div class="content">
+		        		<%= link_to club.name, 
+			        		{:controller => 'clubs', :action =>'one', :id=>"#{club.id}"},
+		            		{:class=>"header"} 
+	            		%>
+			        </div>
+		    	</div>
+    	<% end %>
+</div>
