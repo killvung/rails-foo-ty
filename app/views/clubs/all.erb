@@ -2,7 +2,7 @@
     	<% @clubs.each do |club| %>
     			<div class="ui card">
 		    		<div class="image">
-		          		<%= image_tag("default.png") %>
+		          		<%= image_tag url_for(:controller => "clubs", :action => "show_image", :id => "#{club.id}") %>
 		        	</div>		
 		        	<div class="content">
 		        		<%= link_to club.name, 
