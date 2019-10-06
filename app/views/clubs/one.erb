@@ -1,12 +1,37 @@
-<div class="ui items stackable cards eight column grid container">
-    	<% @players.each do |player| %>
-    			<div class="ui card">
-		    		<div class="image">
-		          		<%= image_tag("player.png") %>
-		        	</div>		
-		        	<div class="content">
-		        		<a class="header"><%= player.name%></a>
-			        </div>
-		    	</div>
-    	<% end %>
+<div class="ui card">
+  <div class="image">
+  	<%= image_tag("default.png") %>
+  </div>
+  <div class="content">
+	<%= link_to(@club.name, @club.club_url, {:class=>"header"})%>
+    <div class="meta">
+      <p class="nickname"><%=@club.nickname%></p>	
+      <p class="date">Joined in <%=@club.establish%></p>
+      <p class="home_venue">Home Venue: <%=@club.home_venue%></p>
+      <p class="state">State: <%=@club.state%></p>
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      Members: <%=@club.members%>
+    </a>
+  </div>
 </div>
+
+
+<% @players_by_level.keys.sort.each do |level| %>
+			<h2><%=level%></h2>
+			<div class="ui items stackable cards eight column grid container">
+				<%@players_by_level[level].each do |player|%>
+					<div class="ui card">
+						<div class="image">
+							<%= image_tag("player.png") %>
+						</div>		
+						<div class="content">
+							<a class="header"><%= player.name%></a>
+						</div>
+					</div>
+				<% end %>
+			</div>	
+<%end %>
