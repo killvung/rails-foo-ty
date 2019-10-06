@@ -1,40 +1,29 @@
+require 'faker'
 require 'date'
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-club1 = Club.create({name: 'Club 1'})
-club2 = Club.create({name: 'Club 2'})
-Player.create([
-    {
-        name:'Player 1 from Club 1',
-        date_of_birth: Date.new(),
-        height: rand(),
-        weight: rand(),
-        club_id: club1[:id]
-    },
-    {
-        name:'Player 1 from Club 2',
-        date_of_birth: Date.new(),
-        height: rand(),
-        weight: rand(),
-        club_id: club2[:id]
-    },
-    {
-        name:'Player 2 from Club 1',
-        date_of_birth: Date.new(),
-        height: rand(),
-        weight: rand(),
-        club_id: club1[:id]
-    },
-    {
-        name:'Player 2 from Club 2',
-        date_of_birth: Date.new(),
-        height: rand(),
-        weight: rand(),
-        club_id: club2[:id]
+
+clubs = (1...Faker::Number.number(digits: 1)).map{|e| Club.create({
+    name:Faker::Team.creature,
+    created_at:Faker::Date.backward(days: 2),
+    updated_at:Faker::Date.backward(days: 1),
+    nickname: Faker::FunnyName.name,
+    home_venue:Faker::Team.state,
+    state:Faker::Team.state,
+    establish:Faker::Number.between(from: 1900, to: 2020),
+    club_url:"https://www.google.com",
+    members:Faker::Number.number(digits: 5)
+})}
+
+clubs.each do |club| 
+    (1...Faker::Number.number(digits: 2)).map{|e|
+        Player.create({
+            name: Faker::FunnyName.name,
+            date_of_birth: Faker::Date.backward(days: 2),
+            height: Faker::Number.decimal(l_digits: 3, r_digits: 3),
+            weight: Faker::Number.decimal(l_digits: 3, r_digits: 3),
+            created_at: Faker::Date.backward(days: 1),
+            updated_at: Faker::Date.backward(days: 1),
+            club_id: club[:id],
+            level: Faker::Number.between(from: 1, to: 2)
+        })
     }
-])
+end
