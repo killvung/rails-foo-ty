@@ -16,7 +16,7 @@ clubs = (1...Faker::Number.number(digits: 1)).map{|e| Club.create({
 })}
 
 clubs.each do |club| 
-    (1...Faker::Number.number(digits: 2)).map{|e|
+    (1...Faker::Number.number(digits: 1)).map{|e|
         Player.create({
             name: Faker::FunnyName.name,
             date_of_birth: Faker::Date.backward(days: 2),
