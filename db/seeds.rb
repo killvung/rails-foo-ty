@@ -27,6 +27,10 @@ clubs.each do |club|
             avatar_small: open('https://archive.org/download/mx-player-logo-450x450/mx-player-logo-450x450.png','rb').read,
             avatar: open('https://logodix.com/logo/1330714.png','rb').read,
             club_id: club[:id],
+            debut: Faker::Number.between(from: 1900, to: 2020),
+            games: Faker::Number.number(digits: 2),
+            goals: Faker::Number.number(digits: 2),
+            fantasy_points_total: Faker::Number.number(digits: 4),
             level: Faker::Number.between(from: 1, to: 2)
         })
     }

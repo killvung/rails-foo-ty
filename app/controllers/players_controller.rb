@@ -1,10 +1,7 @@
 class PlayersController < ApplicationController
-  def all
-
-  end
-
   def one
-
+    @player = Player.find_by(id: params[:id])
+    raise ActionController::RoutingError.new('Not Found') if @player.nil?
   end
 
   def show_image

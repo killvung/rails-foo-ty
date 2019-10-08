@@ -40,8 +40,9 @@ ActiveRecord::Schema.define(version: 2019_10_08_002200) do
     t.string "level"
     t.binary "avatar_small"
     t.integer "games"
-    t.integer "goal"
+    t.integer "goals"
     t.integer "fantasy_points_total"
+    t.integer "debut"
     t.index ["club_id"], name: "index_players_on_club_id"
   end
 

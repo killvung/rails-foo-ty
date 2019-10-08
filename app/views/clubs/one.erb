@@ -29,7 +29,10 @@
               <%= image_tag url_for(:controller => "players", :action => "show_image_small", :id => "#{player.id}") %>
 						</div>		
 						<div class="content">
-							<a class="header"><%= player.name%></a>
+              <%= link_to player.name, 
+                  {:controller => 'players', :action =>'one', :id=>"#{player.id}"},
+                  {:class=>"header"} 
+              %>
 						</div>
 					</div>
 				<% end %>

@@ -1,2 +1,18 @@
-<h1>Players#one</h1>
-<p>Find me in app/views/players/one.html.erb</p>
+<div class="ui centered card">
+  <div class="image">
+    <%= image_tag url_for(:controller => "players", :action => "show_image", :id => "#{@player.id}")%>
+  </div>
+  <div class="content">
+	<h2 class="header"><%=@player.name%></h2>
+    <div class="meta">
+	<p class="height">Height: <%=@player.weight%> cm</p>
+	<p class="weight">Weight: <%=@player.height%> kg</p>
+	<p class="dob">Date of Bith: <%=@player.date_of_birth%></p>
+
+	<p class="debut">Debut: <%=@player.debut%></p>
+	<p class="games">Games: <%=@player.games%></p>
+	<p class="goals">Goals: <%=@player.goals%></p>
+	<p class="fantasy Points Total">Fantasy Points Total: <%=@player.fantasy_points_total%></p>
+    </div>
+  </div>
+</div>
