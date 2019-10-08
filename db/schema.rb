@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_070722) do
+ActiveRecord::Schema.define(version: 2019_10_08_002200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 2019_10_06_070722) do
     t.bigint "club_id"
     t.string "level"
     t.binary "avatar_small"
+    t.integer "games"
+    t.integer "goal"
+    t.integer "fantasy_points_total"
     t.index ["club_id"], name: "index_players_on_club_id"
   end
 
