@@ -5,11 +5,7 @@ This is a Rails applicaiton with the purpose of simply displaying "football" dat
 My engineering manager keeps praising Ruby on Rails since day 01 I worked at the company. To dive in further on this technology I decided to spin something up quick with my Google-fu and documentation.
 
 # Feedback
-Dude, I should have build CRUD apps with Rails instead, why would i spend over 9000 hours for the same thing in NodeJS, if I can just convention over configuration with Rails.
-
-Currently the application displays mock data 
-
-https://rails-foo-ty.herokuapp.com/
+I should have build CRUD apps with Rails instead, why would i spend over 9000 hours for the same thing in NodeJS, if I can just convention over configuration with Rails.
 
 # README
 
